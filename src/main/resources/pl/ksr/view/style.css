@@ -1,0 +1,57 @@
+.tool-bar{
+    -fx-background-color: #640606;
+}
+.radio-button {
+    -fx-font-size: 15px;
+}
+.text-field {
+    -fx-font-size: 30px;
+}
+.combo-box {
+    -fx-font-size: 15px;
+}
+.slider {
+    -fx-font-size: 30px;
+}
+.check-box {
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+}
+#tileLabel {
+    -fx-text-fill: white;
+}
+#saveButton {
+    -fx-font-size: 25px;
+}
+#loadButton {
+    -fx-font-size: 25px;
+}
+#editButton {
+    -fx-font-size: 25px;
+}
+#selection {
+    -fx-font-size: 30px;
+}
+
+#generateOSButton {
+    -fx-font-size: 25px;
+}
+#generateMSButton {
+    -fx-font-size: 25px;
+}
+#createButton {
+    -fx-font-size: 50px;
+}
+#backButton {
+    -fx-font-size: 25px;
+}
+#saveMeasuresButton {
+    -fx-font-size: 25px;
+}
+#pane {
+    -fx-background-color:  #06646F
+}
+
+#progressBar {
+    -fx-accent:  green
+}

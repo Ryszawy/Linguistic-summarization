@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import org.controlsfx.control.CheckComboBox?>
+<AnchorPane prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="pl.ksr.view.EditController"
+            stylesheets="@style.css">
+    <children>
+        <ToolBar fx:id="toolbar" layoutX="0.0" layoutY="0.0" prefHeight="700.0" prefWidth="310.0"/>
+
+        <Button layoutX="4.0" layoutY="320.0"
+                prefHeight="30.0" prefWidth="300.0"
+                text="Back"
+                fx:id="backButton"
+                onAction="#onBackClick"
+        />
+
+        <Button layoutX="4.0" layoutY="380.0"
+                prefHeight="30.0" prefWidth="300.0"
+                text="Save"
+                fx:id="saveButton"
+                onAction="#onSaveClick"
+        />
+
+        <Button layoutX="4.0" layoutY="440.0"
+                prefHeight="30.0" prefWidth="300.0"
+                text="Load"
+                fx:id="loadButton"
+                onAction="#onLoadClick"
+        />
+
+        <Button
+                layoutX="4.0" layoutY="500.0"
+                prefHeight="60.0" prefWidth="300.0"
+                text="Create"
+                fx:id="createButton"
+                onAction="#onCreateClick"/>
+
+        <Label
+                layoutX="520.0" layoutY="10.0"
+                text="Type of object:"
+                style=" -fx-font-size: 30px; -fx-text-fill: black"/>
+
+        <RadioButton
+                layoutX="320.0" layoutY="60.0"
+                text="Relative Quantifier"
+                fx:id="relativeQuantifierRadioButton"
+        />
+
+        <RadioButton
+                layoutX="480.0" layoutY="60.0"
+                text="Absolute Quantifier"
+                fx:id="absoluteQuantifierRadioButton"
+        />
+
+
+        <RadioButton
+                layoutX="660.0" layoutY="60.0"
+                text="Linguistic Variable"
+                fx:id="variableRadioButton"
+        />
+
+        <Label
+                layoutX="320.0" layoutY="120.0"
+                prefHeight="30.0" prefWidth="240.0"
+                text="Label Name"
+                style=" -fx-font-size: 30px; -fx-text-fill: black"/>
+        <TextField
+                layoutX="600.0" layoutY="120.0"
+                prefHeight="30.0" prefWidth="270.0"
+                style="-fx-font-size: 20px"
+                fx:id="variableName"/>
+
+        <Label
+                layoutX="320.0" layoutY="180.0"
+                prefHeight="30.0" prefWidth="240.0"
+                text="Attribute name"
+                fx:id="attributeName" visible="false"
+                style=" -fx-font-size: 30px ; -fx-text-fill: black"
+        />
+        <ComboBox
+                layoutX="600.0" layoutY="180.0"
+                prefHeight="30.0" prefWidth="270.0"
+                fx:id="linguisticVariableComboBox" visible="false"
+                style="-fx-font-size: 20px"/>
+
+
+        <Label
+                layoutX="520.0" layoutY="240.0"
+                text="Type of function:"
+                style=" -fx-font-size: 30px ; -fx-text-fill: black"/>
+
+        <RadioButton
+                layoutX="380.0" layoutY="290.0"
+                text="Gaussian"
+                fx:id="gaussian"
+        />
+
+        <RadioButton
+                layoutX="520.0" layoutY="290.0"
+                text="Triangular"
+                fx:id="triangular"
+        />
+        <RadioButton
+                layoutX="680.0" layoutY="290.0"
+                text="Trapezoidal"
+                fx:id="trapezoidal"
+        />
+
+        <Label
+                layoutX="320.0" layoutY="350.0"
+                prefHeight="30.0" prefWidth="240.0"
+                style="-fx-font-size: 25px; -fx-text-fill: black"
+                fx:id="pointALabel" visible="false"
+        />
+        <TextField
+                layoutX="600.0" layoutY="350.0"
+                prefHeight="30.0" prefWidth="270.0"
+                text="0.01" fx:id="pointATextField"
+                style="-fx-font-size: 25px" visible="false"/>
+
+        <Label
+                layoutX="320.0" layoutY="410.0"
+                prefHeight="30.0" prefWidth="240.0"
+                style="-fx-font-size: 25px;-fx-text-fill: black"
+                fx:id="pointBLabel" visible="false"/>
+        <TextField
+                layoutX="600.0" layoutY="410.0"
+                prefHeight="30.0" prefWidth="270.0"
+                text="0.48" fx:id="pointBTextField"
+                style="-fx-font-size: 25px" visible="false"/>
+        <Label
+                layoutX="320.0" layoutY="470.0"
+                prefHeight="30.0" prefWidth="240.0"
+                style="-fx-font-size: 25px; -fx-text-fill: black"
+                fx:id="pointCLabel" visible="false" text="Point C"
+        />
+
+        <TextField
+                layoutX="600.0" layoutY="470.0"
+                prefHeight="30.0" prefWidth="270.0"
+                text="0.96" fx:id="pointCTextField"
+                style="-fx-font-size: 25px" visible="false"/>
+
+        <Label
+                layoutX="320.0" layoutY="530.0"
+                prefHeight="30.0" prefWidth="240.0"
+                style="-fx-font-size: 25px; -fx-text-fill: black"
+                fx:id="pointDLabel" visible="false" text="Point D"
+        />
+
+        <TextField
+                layoutX="600.0" layoutY="530.0"
+                prefHeight="30.0" prefWidth="270.0"
+                text="0.96" fx:id="pointDTextField"
+                style="-fx-font-size: 25px" visible="false"/>
+
+
+
+
+
+
+    </children>
+
+    <AnchorPane fx:id="pane" layoutX="880.0" layoutY="0.0" prefHeight="700.0" prefWidth="460.0"/>
+    <children>
+        <Label
+                layoutX="970.0" layoutY="10.0"
+                prefHeight="30.0" prefWidth="240.0"
+                text="Measures"
+                style="-fx-text-fill: white; -fx-font-size: 30px"/>
+        <Label
+                layoutX="884.0" layoutY="60.0"
+                prefHeight="30.0" prefWidth="240.0"
+                text="degreeOfTruth (T1)"
+                style="-fx-text-fill: white; -fx-font-size: 14px"/>
+        <TextField
+                layoutX="1125.0" layoutY="60.0"
+                prefHeight="30.0" prefWidth="60.0"
+                style="-fx-font-size: 14px"
+                fx:id="degreeOfTruth"
+                text="0.2"/>
+        <Label
+                layoutX="884.0" layoutY="100.0"
+                prefHeight="30.0" prefWidth="240.0"
+                text="degreeOfImprecision (T2)"
+                style="-fx-text-fill: white; -fx-font-size: 14px"/>
+        <TextField
+                layoutX="1125.0" layoutY="100.0"
+                prefHeight="30.0" prefWidth="60.0"
+                style="-fx-font-size: 14px"
+                fx:id="degreeOfImprecision"
+                text="0.08"
+        />
+
+        <Label
+                layoutX="884.0" layoutY="140.0"
+                prefHeight="30.0" prefWidth="240.0"
+                text="degreeOfCoverage (T3)"
+                style="-fx-text-fill: white; -fx-font-size: 14px"/>
+        <TextField
+                layoutX="1125.0" layoutY="140.0"
+                prefHeight="30.0" prefWidth="60.0"
+                text="0.08"
+                fx:id="degreeOfCoverage"
+                style="-fx-font-size: 14px"/>
+
+        <Label
+                layoutX="884.0" layoutY="180.0"
+                prefHeight="30.0" prefWidth="240.0"
+                text="degreeOfAppropriateness (T4)"
+                style="-fx-text-fill: white; -fx-font-size: 14px"/>
+        <TextField
+                layoutX="1125.0" layoutY="180.0"
+                prefHeight="30.0" prefWidth="60.0"
+                text="0.08"
+                fx:id="degreeOfAppropriateness"
+                style="-fx-font-size: 14px"/>
+
+        <Label
+                layoutX="884.0" layoutY="220.0"
+                prefHeight="30.0" prefWidth="240.0"
+                text="lengthOfSummarizer (T5)"
+                style="-fx-text-fill: white; -fx-font-size: 14px"/>
+        <TextField
+                layoutX="1125.0" layoutY="220.0"
+                prefHeight="30.0" prefWidth="60.0"
+                text="0.08"
+                fx:id="lengthOfSummarizer"
+                style="-fx-font-size: 14px"/>
+
+        <Label
+                layoutX="884.0" layoutY="260.0"
+                prefHeight="30.0" prefWidth="240.0"
+                text="degreeOfQuantifierImprecision (T6)"
+                style="-fx-text-fill: white; -fx-font-size: 14px"/>
+        <TextField
+                layoutX="1125.0" layoutY="260.0"
+                prefHeight="30.0" prefWidth="60.0"
+                text="0.08"
+                fx:id="degreeOfQuantifierImprecision"
+                style="-fx-font-size: 14px"/>
+        <Label
+                layoutX="884.0" layoutY="300.0"
+                prefHeight="30.0" prefWidth="240.0"
+                text="degreeOfQuantifierCardinality (T7)"
+                style="-fx-text-fill: white; -fx-font-size: 14px"/>
+        <TextField
+                layoutX="1125.0" layoutY="300.0"
+                prefHeight="30.0" prefWidth="60.0"
+                text="0.08"
+                fx:id="degreeOfQuantifierCardinality"
+                style="-fx-font-size: 14px"/>
+
+        <Label
+                layoutX="884.0" layoutY="340.0"
+                prefHeight="30.0" prefWidth="240.0"
+                text="degreeOfSummarizerCardinality (T8)"
+                style="-fx-text-fill: white; -fx-font-size: 14px"/>
+        <TextField
+                layoutX="1125.0" layoutY="340.0"
+                prefHeight="30.0" prefWidth="60.0"
+                text="0.08"
+                fx:id="degreeOfSummarizerCardinality"
+                style="-fx-font-size: 14px"/>
+
+        <Label
+                layoutX="884.0" layoutY="380.0"
+                prefHeight="30.0" prefWidth="240.0"
+                text="degreeOfQualifierImprecision (T9)"
+                style="-fx-text-fill: white; -fx-font-size: 14px"/>
+        <TextField
+                layoutX="1125.0" layoutY="380.0"
+                prefHeight="30.0" prefWidth="60.0"
+                text="0.08"
+                fx:id="degreeOfQualifierImprecision"
+                style="-fx-font-size: 14px"/>
+
+        <Label
+                layoutX="884.0" layoutY="420.0"
+                prefHeight="30.0" prefWidth="240.0"
+                text="degreeOfQualifierCardinality (T10)"
+                style="-fx-text-fill: white; -fx-font-size: 14px"/>
+        <TextField
+                layoutX="1125.0" layoutY="420.0"
+                prefHeight="30.0" prefWidth="60.0"
+                text="0.08"
+                fx:id="degreeOfQualifierCardinality"
+                style="-fx-font-size: 14px"/>
+
+        <Label
+                layoutX="884.0" layoutY="460.0"
+                prefHeight="30.0" prefWidth="240.0"
+                text="lengthOfQualifier (T11)"
+                style="-fx-text-fill: white; -fx-font-size: 14px"/>
+        <TextField
+                layoutX="1125.0" layoutY="460.0"
+                prefHeight="30.0" prefWidth="60.0"
+                text="0.08"
+                fx:id="lengthOfQualifier"
+                style="-fx-font-size: 14px"/>
+        <Button layoutX="890.0" layoutY="520.0"
+                prefHeight="40.0" prefWidth="300.0"
+                text="Save Measures"
+                fx:id="saveMeasuresButton"
+                onAction="#onSaveMeasuresClick"
+        />
+    </children>
+
+
+</AnchorPane>

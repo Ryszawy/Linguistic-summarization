@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<?import org.controlsfx.control.CheckComboBox?>
+<AnchorPane prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="pl.ksr.view.AppController"
+            stylesheets="@style.css"
+>
+    <children>
+        <ToolBar fx:id="toolbar" layoutX="0.0" layoutY="0.0" prefHeight="700.0" prefWidth="310.0"/>
+
+
+
+        <Button  layoutX ="4.0" layoutY="300.0"
+                 prefHeight="30.0" prefWidth="300.0"
+                 text="Edit"
+                 fx:id="editButton"
+                 onAction="#onEditClick"
+        />
+
+        <Button  layoutX ="4.0" layoutY="360.0"
+                 prefHeight="30.0" prefWidth="300.0"
+                 text="Save"
+                 fx:id="saveButton"
+                 onAction="#onSaveClick"
+        />
+
+        <Button  layoutX ="4.0" layoutY="420.0"
+                 prefHeight="30.0" prefWidth="300.0"
+                 text="Load"
+                 fx:id="loadButton"
+                 onAction="#onLoadClick"
+        />
+
+        <Label layoutX="80.0" layoutY="10.0"
+               text="Selection"   style="-fx-font-size: 35px; -fx-text-fill: white"
+               fx:id="selection"
+        />
+
+        <Label layoutX="4.0" layoutY="140.0"
+               text="Feature:"
+               style="-fx-font-size: 25px; -fx-text-fill: white"/>
+
+        <CheckComboBox
+                fx:id="variableComboBox" layoutX="120.0" layoutY="140.0"
+                prefWidth="180.0"/>
+
+        <ProgressBar
+                layoutX="10.0" layoutY="220.0"
+                prefHeight="50.0" prefWidth="290.0"
+                fx:id="progressBar"
+                visible="true"
+        />
+
+
+        <Button
+                layoutX="4.0" layoutY="480.0"
+                prefHeight="30.0" prefWidth="300.0"
+                text="One Subject Summaries"
+                fx:id="generateOSButton"
+                onAction="#onGenerateOSClick"/>
+
+
+        <Button
+                layoutX="4.0" layoutY="540.0"
+                prefHeight="30.0" prefWidth="300.0"
+                text="Two Subject Summaries"
+                fx:id="generateMSButton"
+                onAction="#onGenerateMSClick"/>
+
+
+    </children>
+
+    <Label layoutX="400.0" layoutY="10.0"
+           text="Total number of summaries: "
+           style="-fx-font-size: 25px; -fx-text-fill: black"
+           fx:id="numberOfSummaries"
+    />
+
+
+    <TableView
+            layoutX="315.0" layoutY="50.0"
+            prefWidth="880.0" prefHeight="500"
+            fx:id="tableViewOneSubject"
+    />
+    <TableView
+            layoutX="315.0" layoutY="50.0"
+            prefWidth="880.0" prefHeight="500"
+            fx:id="tableViewMultipleSubject"
+    />
+
+</AnchorPane>
